@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc Tết</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+    font-size: 18px;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Chúc Mừng Năm Mới!</h1>
+  <p>Nhập tên của bạn để nhận lời chúc Tết:</p>
+  <input type="text" id="nameInput" placeholder="Nhập tên của bạn...">
+  <button onclick="chucTet()">Chúc Tết</button>
+  <p id="chucTetText"></p>
+</div>
+
+<script>
+function chucTet() {
+  var name = document.getElementById("nameInput").value | "";
+  var chucPhrases = [
+    `Năm cũ qua đi, năm mới đã tới. Chúc bạn ${name} bầu trời sức khỏe, biển cả tình thương, đại dương tình bạn, sự nghiệp sáng ngời, gia đình thịnh vượng.`,
+    `Năm mới xin chúc cho bạn ${name} đau đầu vì nhà giàu. Mệt mỏi vì học giỏi. Buồn phiền vì nhiều tiền. Ngang trái vì xinh gái. Mệt mỏi vì đẹp trai. Và mất ngủ vì không có đối thủ.`,
+    `Chúc bạn ${name} 12 tháng phú quý, 365 ngày phát tài, 8.760 giờ sung túc, 525.600 phút thành công và 31.536.000 giây mã đáo.`,
+    `Năm mới đã tới, tôi có đôi lời gửi gắm đến bạn ${name}: \nMừng xuân Tân Sửu chúc mọi người vui vẻ như Chim Sẻ. \nKhỏe mạnh như Đại Bàng. \nGiàu sang như chim Phụng. \nLàm lụng như chim Sâu. \nSống lâu như Đà Điểu.`,
+    `Năm mới đã tới, tôi có đôi lời gửi gắm đến bạn ${name}: \nNăm mới Tết đến \nRước hên vào nhà \nQuà cáp bao la \nMọi nhà no đủ \nVàng bạc đầy tủ \nGia chủ phát tài \nGià trẻ gái trai \nSum vầy hạnh phúc \nCầu tài chúc phúc \nLộc đến quanh năm \nAn khang thịnh vượng.`,
+    `Năm mới 2024 toi xin chúc ${name} một năm phát tài phát lộc, gặp người người quý, làm việc gì cũng thành công. Mình gửi lời chúc Tết chân thành nhất từ đáy lòng. Chúc ông sức khỏe dồi dào, dẻo dai, phong độ, chúc bà giữ mãi nét trẻ đẹp, tinh thần lạc quan, vui vẻ. Gia đình luôn sum vầy, hòa thuận chung sống.`,
+    `Năm mới Giáp Thìn, mình xin chúc ${name} hồng phúc tề thiên, vạn sự như ý, tấn tài tấn lộc. Chúc gia đình cùng đón chào một năm mọi người gặt hái được nhiều thành công, niềm vui.`,
+    `Năm mới chúc bạn ${name} thực hiện được những dự định còn dang dở, quen thêm những người bạn mới, đến những vùng đất mới. Chúc bạn bầu trời sức khỏe, biển cả tình thương, đại dương tình bạn, sự nghiệp sáng ngời, gia đình thịnh vượng.`,
+    `Năm mới 2024 toi xin chúc ${name}: Năm hết Tết đến, rước lộc vào nhà, quà cáp bao la, mọi nhà no đủ, vàng bạc đầy tủ, gia chủ phát tài, già trẻ gái trai sum vầy hạnh phúc. Chúc cậu năm mới mọi chuyện thuận lợi, suôn sẻ, dồi dào sức khỏe và luôn hạnh phúc với những gì cậu đang làm.`,
+    `Một năm cũ đã qua, một năm mới lại tới, cảm ơn bạn ${name} đã luôn đồng hành cùng tôi. Năm mới chúc cho tình bạn của chúng ta mãi bền chặt. Mãi bên nhau bạn nhé!`
+  ];
+
+  var randomIndex = Math.floor(Math.random() * chucPhrases.length);
+  var chucTetText = document.getElementById("chucTetText");
+  
+  if (name) {
+    chucTetText.innerHTML = chucPhrases[randomIndex];
+  } else {
+    chucTetText.innerHTML = "Vui lòng nhập tên của bạn để nhận lời chúc Tết!";
+  }
+}
+</script>
+
+</body>
+</html>
