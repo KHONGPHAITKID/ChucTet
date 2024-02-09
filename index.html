@@ -75,7 +75,7 @@
   <button onclick="chucTet()">Chúc Tết</button>
   <p id="chucTetText"></p>
   <div id="imageContainer">
-    <p id="aImage1">MÌNH XIN NHẬN LÌ XÌ TẠI ĐÂY</p>
+    <p id="aImage1" style="display: none;">MÌNH XIN NHẬN LÌ XÌ TẠI ĐÂY</p>
     <img id="aImage" src="qr.png" alt="A Image">
   </div>
 </div>
@@ -99,14 +99,16 @@ function chucTet() {
   var randomIndex = Math.floor(Math.random() * chucPhrases.length);
   var chucTetText = document.getElementById("chucTetText");
   var aImage = document.getElementById("aImage");
+  var aImage1 = document.getElementById("aImage1");
   
   chucTetText.innerHTML = chucPhrases[randomIndex];
   aImage.style.display = "none"; // hide the image initially
+  aImage1.style.display = "none"; // hide the additional message initially
   
-  // Show the image after 5 seconds
+  // Show the image and additional message after 3.5 seconds
   setTimeout(function() {
-    aImage.style.display = "block";
     aImage1.style.display = "block";
+    aImage.style.display = "block";
   }, 3500);
 }
 </script>
