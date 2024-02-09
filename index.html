@@ -75,7 +75,7 @@
   <button onclick="chucTet()">Chúc Tết</button>
   <p id="chucTetText"></p>
   <div id="imageContainer">
-    <p>MÌNH XIN NHẬN LÌ XÌ TẠI ĐÂY</p>
+    <p id="aImage1">MÌNH XIN NHẬN LÌ XÌ TẠI ĐÂY</p>
     <img id="aImage" src="qr.png" alt="A Image">
   </div>
 </div>
@@ -106,6 +106,7 @@ function chucTet() {
   // Show the image after 5 seconds
   setTimeout(function() {
     aImage.style.display = "block";
+    aImage1.style.display = "block";
   }, 3500);
 }
 </script>
