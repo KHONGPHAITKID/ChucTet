@@ -68,7 +68,7 @@
 
 <script>
 function chucTet() {
-  var name = document.getElementById("nameInput").value | "";
+  var name = document.getElementById("nameInput").value | "nào đó";
   var chucPhrases = [
     `Năm cũ qua đi, năm mới đã tới. Chúc bạn ${name} bầu trời sức khỏe, biển cả tình thương, đại dương tình bạn, sự nghiệp sáng ngời, gia đình thịnh vượng.`,
     `Năm mới xin chúc cho bạn ${name} đau đầu vì nhà giàu. Mệt mỏi vì học giỏi. Buồn phiền vì nhiều tiền. Ngang trái vì xinh gái. Mệt mỏi vì đẹp trai. Và mất ngủ vì không có đối thủ.`,
@@ -85,11 +85,9 @@ function chucTet() {
   var randomIndex = Math.floor(Math.random() * chucPhrases.length);
   var chucTetText = document.getElementById("chucTetText");
   
-  if (name) {
-    chucTetText.innerHTML = chucPhrases[randomIndex];
-  } else {
-    chucTetText.innerHTML = "Vui lòng nhập tên của bạn để nhận lời chúc Tết!";
-  }
+  
+  chucTetText.innerHTML = chucPhrases[randomIndex];
+
 }
 </script>
 
