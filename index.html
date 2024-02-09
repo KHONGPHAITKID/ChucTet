@@ -54,6 +54,16 @@
   button:hover {
     background-color: #45a049;
   }
+  
+  #imageContainer {
+    margin-top: 20px;
+  }
+  
+  #aImage {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
 </style>
 </head>
 <body>
@@ -64,6 +74,10 @@
   <input type="text" id="nameInput" placeholder="Nhập tên của bạn...">
   <button onclick="chucTet()">Chúc Tết</button>
   <p id="chucTetText"></p>
+  <div id="imageContainer">
+    <p>MÌNH XIN NHẬN LÌ XÌ TẠI ĐÂY</p>
+    <img id="aImage" src="qr.png" alt="A Image">
+  </div>
 </div>
 
 <script>
@@ -84,10 +98,15 @@ function chucTet() {
 
   var randomIndex = Math.floor(Math.random() * chucPhrases.length);
   var chucTetText = document.getElementById("chucTetText");
-  
+  var aImage = document.getElementById("aImage");
   
   chucTetText.innerHTML = chucPhrases[randomIndex];
-
+  aImage.style.display = "none"; // hide the image initially
+  
+  // Show the image after 5 seconds
+  setTimeout(function() {
+    aImage.style.display = "block";
+  }, 3500);
 }
 </script>
 
